@@ -33,7 +33,7 @@ setup() {
 
 getList() {
   echo ""
-  echo " Kernel Ubuntu Mainline Checker by @gojigeje"
+  echo " Ubuntu Kernel Mainline Checker by @gojigeje"
   echo " Version $VERSI"
   echo ""
   echo -n " Updating kernel list.."
@@ -94,12 +94,20 @@ conky() {
 }
 
 usage() {
-  echo "Usage :  $0 cek|update|current|conky"
+  echo ""
+  echo "  Usage:       $0 <action>"
+  echo ""
+  echo "  Action:      cek | quiet    Run script in quiet mode (write to cache, no output)"
+  echo "               update         Run script in verbose mode (display process and output)"
+  echo "               current        Display current (cached) kernel version"
+  echo "               conky          Display current (cached) kernel version one line output"
+  echo "                              (conky friendly)"
+  echo ""
 }
 
 setup
 case "$1" in
-  "cek" )
+  "cek"|"quiet" )
     getListCron
     ;;
 
